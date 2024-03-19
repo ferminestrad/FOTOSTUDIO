@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Fotografía</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el encabezado */
+        header {
+            background-color: rgb(5, 5, 5); /* Fondo blanco */
+            display: flex; /* Utiliza flexbox */
+            justify-content: space-between; /* Alinea los elementos al inicio y al final */
+            align-items: center; /* Centra verticalmente los elementos */
+            padding: 20px;
+        }
+
+        /* Estilos para la imagen de fondo */
+        .background-container {
+            width: 200%;
+            height: 100vh; /* Toma el 100% del alto de la pantalla */
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            position: relative; /* Posición relativa para alinear la imagen */
+        }
+
+        .background-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Escala la imagen para que cubra todo el área del contenedor */
+            position: absolute; /* Posición absoluta para cubrir todo el contenedor */
+            top: 0; /* Posiciona la imagen en la parte superior */
+            left: 0; /* Posiciona la imagen en la parte izquierda */
+        }
+
+        /* Estilos para el logotipo */
+        .logo {
+            width: 200px; /* Tamaño del logotipo */
+            height: auto; /* Ajusta la altura automáticamente según el ancho */
+        }
+
+        /* Estilos para los enlaces en el encabezado */
+        header nav {
+            font-family: Arial, sans-serif; /* Tipografía sin serif */
+        }
+
+        header nav a {
+            color: white; /* Color blanco para los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            margin: 0 10px; /* Espacio entre los enlaces */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Envuelve el logotipo en un enlace -->
+        <a href="index.html">
+        <!-- Reemplaza el título con la imagen del logotipo -->
+        <img src="images/ncodestudio1.png" alt="Logotipo" class="logo">
+
+        <!-- Enlaces a las secciones -->
+        <nav>
+            <a href="#gallery">Galería</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#contactO">Contacto</a>
+        </nav>
+    </header>
+     <!-- Imagen de fondo -->
+     <div class="background-container">
+        <img src="images/craneo (1 of 1).jpg" alt="Imagen de fondo" class="background-image">
+    </div>
+
+    <section id="gallery">
+        <h2>Galería de Fotos</h2>
+        <div class="photo-gallery">
+            <img src="images/tk.jpg" alt="Foto 1" class="gallery-image" onclick="openModal('modal1')">
+            <img src="images/ele.jpg" alt="Foto 2" class="gallery-image" onclick="openModal('modal2')">
+            <!-- Agregar más imágenes según sea necesario -->
+        </div>
+    </section>
+    <div id="modal1" class="modal">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <img class="modal-content" src="images/tk.jpg" alt="Foto 1">
+        <div class="prev" onclick="prevModal('modal1', 'modal2')">&#10094;</div>
+        <div class="next" onclick="nextModal('modal1', 'modal2')">&#10095;</div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <img class="modal-content" src="images/ele.jpg" alt="Foto 2">
+        <div class="prev" onclick="prevModal('modal2', 'modal1')">&#10094;</div>
+        <div class="next" onclick="nextModal('modal2', 'modal1')">&#10095;</div>
+    </div>
+    <!-- Agregar más modals según sea necesario -->
+
+    <script src="script.js"></script>
+
+    <section id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <!-- Contenido de la sección Sobre Mí -->
+    </section>
+
+    <section id="contactO">
+        <h2>Contacto</h2>
+        <p>Si estás interesado en trabajar juntos o tienes alguna pregunta, no dudes en ponerte en contacto conmigo.</p>
+        <p>Email: fmedia@gmail.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </section>
+    
+</body>
+</html>
